@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarrinhoDeCompras {
+
     private List<Itens> itens; // Lista de itens no carrinho
     private double totalPreco;
     private int totalQuantidade;
@@ -27,19 +28,36 @@ public void mostrarCarrinho() {
     } else {
         System.out.println("Itens no carrinho:");
         for (Itens item : itens) {
-            System.out.println(item.getProduto() + "\n - Quantidade: " + item.getQuantidade() + "\n - Preço: R$" + item.getPreco());
+            System.out.println("Item :"+ item.getItem()+ "\n Produto"+item.getProduto() + "\n - Quantidade: " + item.getQuantidade() + "\n - Preço: R$" + item.getPreco());
         }
         System.out.println("Total de itens: " + totalQuantidade);
         System.out.println("Preço total: R$" + totalPreco);
     }
 }
-        public void removerItem(Itens item )
-        {
-            itens.remove(item);
-            totalPreco -= item.getPreco() * item.getQuantidade();
-            totalQuantidade -= item.getQuantidade();
-            System.out.println(item.getProduto() + " remover ao carrinho.");
-        }
+public void removerItem(Itens item) { 
+    if (item == null) {
+        System.out.println("Erro: Item não pode ser nulo.");
+        return;
+    }
+
+    // Verifica se o item está presente na lista
+    if (itens.contains(item)) {
+        itens.remove(item);
+        totalPreco -= item.getPreco() * item.getQuantidade();
+        totalQuantidade -= item.getQuantidade();
+        System.out.println(item.getProduto() + " removido do carrinho.");
+    } else {
+        System.out.println("Erro: Item não encontrado no carrinho.");
+    }
+}
+public Itens getItemPorIndice(int index) {
+    if (index >= 0 && index < itens.size()) {
+        return itens.get(index);
+    }
+    return null; // Ou lance uma exceção
+}
+
+ 
     // Método para retornar o total do carrinho
     public double getTotalPreco() {
         return totalPreco;

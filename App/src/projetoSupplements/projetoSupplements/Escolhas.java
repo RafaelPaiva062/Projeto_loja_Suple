@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Escolhas {
+    private static final Itens Itens = null;
     private static Proteina pProteina = new Proteina(0, "", 0.0, 0);
     private static  Aminoacidos aminoacidosInstance = new Aminoacidos(0, "", 0.0, 0);
     private static   Hipecalorico hipecalorico = new Hipecalorico(0, "", 0.0, 0);
@@ -55,6 +56,7 @@ public class Escolhas {
             System.out.println("Digite sua preferencia de escolha:");
             System.out.println("1- Ver todos as categorias.");
             System.out.println("2-Mostra compras em andamento");
+            System.out.println("3- Remover compras");
             System.out.println("O-Sair");
             int esco = sc.nextInt();
             Escolhas.setEscolha(esco);
@@ -1508,6 +1510,12 @@ public class Escolhas {
                     break;
                  case 2:
                  carrinho.mostrarCarrinho();
+                 break;
+                 case 3:
+                 System.out.println("Qual item deseja remover? (Digite o índice)");
+                 int indexRemover = sc.nextInt(); // Obtenha o índice do item a ser removido
+                 Itens itemParaRemover = carrinho.getItemPorIndice(indexRemover); // Método que você deve implementar
+                 carrinho.removerItem(itemParaRemover);
                  break;
                 default:
                     break;
