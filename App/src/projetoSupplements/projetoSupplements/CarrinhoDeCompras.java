@@ -33,6 +33,13 @@ public void mostrarCarrinho() {
         System.out.println("Preço total: R$" + totalPreco);
     }
 }
+        public void removerItem(Itens item )
+        {
+            itens.remove(item);
+            totalPreco -= item.getPreco() * item.getQuantidade();
+            totalQuantidade -= item.getQuantidade();
+            System.out.println(item.getProduto() + " remover ao carrinho.");
+        }
     // Método para retornar o total do carrinho
     public double getTotalPreco() {
         return totalPreco;
