@@ -1512,10 +1512,15 @@ public class Escolhas {
                  carrinho.mostrarCarrinho();
                  break;
                  case 3:
-                 System.out.println("Qual item deseja remover? (Digite o índice)");
-                 int indexRemover = sc.nextInt(); // Obtenha o índice do item a ser removido
-                 Itens itemParaRemover = carrinho.getItemPorIndice(indexRemover); // Método que você deve implementar
-                 carrinho.removerItem(itemParaRemover);
+                if( somaQuantidade == 0)
+                { 
+                    System.out.println("Erro: Item não encontrado no carrinho.");
+                } else{
+                    System.out.println("Qual item deseja remover? (Digite o índice)");
+                    int indexRemover  = sc.nextInt(); // Obtenha o índice do item a ser removido
+                    Itens itemParaRemover = carrinho.getItemPorIndice(indexRemover); // Método que você deve implementarr
+                    carrinho.removerItem(itemParaRemover);
+                }
                  break;
                 default:
                     break;

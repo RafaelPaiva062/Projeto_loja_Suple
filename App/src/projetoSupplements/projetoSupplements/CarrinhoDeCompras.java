@@ -39,7 +39,6 @@ public void removerItem(Itens item) {
         System.out.println("Erro: Item não pode ser nulo.");
         return;
     }
-
     // Verifica se o item está presente na lista
     if (itens.contains(item)) {
         itens.remove(item);
