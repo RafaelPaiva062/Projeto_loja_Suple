@@ -2,7 +2,7 @@ package projetoSupplements;
 import java.util.ArrayList;
 import java.util.List;
 public class Proteina extends Itens{
- private List<Proteina> proteina = new ArrayList<>();
+ private List<Itens> proteina = new ArrayList<>();
 
 public Proteina( int item,String produto, double preco ,int quantidade){
    super(item,produto, preco , quantidade );
@@ -50,7 +50,7 @@ public void arrayProteina(){
       proteina.add(new Proteina(36,"-  Max Titanium-Top Whey 3W + Natural 900G",179.90,1));
       proteina.add(new Proteina(37,"-  Max Titanium-Top Vegan Protein 600g",166.94,1));
       // Produtos Integralmedica 
-      proteina.add(new Proteina(38,"-  Integralmedica -MY WHEY – High quality protein powder 900g",107.92,1));
+      proteina.add(new Proteina(38,"-  Integralmedica -MY WHEY High quality protein powder 900g",107.92,1));
       proteina.add(new Proteina(39,"-  Integralmedica -Whey Protein Concentrado Pouch 900g",137.13,1));
       proteina.add(new Proteina(40,"-  Integralmedica -Whey 100% pure | Whey Protein Concentrado - pote 450g",54.95,1));
       proteina.add(new Proteina(41,"-  Integralmedica -Whey Protein Concentrado 900g",146.19,1));
@@ -58,11 +58,11 @@ public void arrayProteina(){
       proteina.add(new Proteina(43,"-  Integralmedica -Iso Triple Zero | Whey Protein Isolado 1,8Kg",404.92,1));
    }
 
-public List<Proteina> getProteina() {
+public List<Itens> getProteina() {
    return proteina;
 }
 
-public void setProteina(List<Proteina> proteina) {
+public void setProteina(List<Itens> proteina) {
    this.proteina = proteina;
 }
 

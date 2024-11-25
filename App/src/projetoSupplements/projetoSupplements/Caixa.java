@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 public class Caixa {
-    private Escolhas escolhas = new Escolhas(0, 0, 0);
+    private Escolhas escolhas = new Escolhas(0,0, 0, 0);
     private  static Date date = new Date();
     private  static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/aaa HH:mm:ss");
     private static String endereco;

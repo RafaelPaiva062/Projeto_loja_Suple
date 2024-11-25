@@ -5,8 +5,8 @@ import java.util.List;
 public class CarrinhoDeCompras {
 
     private List<Itens> itens; // Lista de itens no carrinho
-    private double totalPreco;
-    private int totalQuantidade;
+    private double totalPreco = 0;
+    private int totalQuantidade= 0 ;
 
     // Construtor
     public CarrinhoDeCompras() {
@@ -35,7 +35,7 @@ public void mostrarCarrinho() {
     }
 }
 public void removerItem(Itens item) { 
-    if (item == null) {
+    if (item == null ) {
         System.out.println("Erro: Item não pode ser nulo.");
         return;
     }
@@ -49,6 +49,8 @@ public void removerItem(Itens item) {
         System.out.println("Erro: Item não encontrado no carrinho.");
     }
 }
+
+
 public Itens getItemPorIndice(int index) {
     if (index >= 0 && index < itens.size()) {
         return itens.get(index);

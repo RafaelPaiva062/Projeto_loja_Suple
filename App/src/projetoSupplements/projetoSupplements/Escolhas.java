@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Escolhas {
     private static final Itens Itens = null;
-    private static Proteina pProteina = new Proteina(0, "", 0.0, 0);
+    private static  Proteina  pProteina = new Proteina(0, "", 0.0, 0);
     private static  Aminoacidos aminoacidosInstance = new Aminoacidos(0, "", 0.0, 0);
     private static   Hipecalorico hipecalorico = new Hipecalorico(0, "", 0.0, 0);
     private static  Vitaminas vitaminas = new Vitaminas(0, "", 0.0, 0);
@@ -13,17 +13,19 @@ public class Escolhas {
     private static Pretreinos pretreinos = new Pretreinos(0, "", 0.0, 0);
     private static   CarrinhoDeCompras carrinho = new CarrinhoDeCompras();
     private static int escolha = 0;
+    private static int itenEs;
     private static int somaQuantidade = 0;
     private static int somaProco;
-    private static String getSomaQuantidade;
-    public Escolhas(int escolha, int somaQuantidade,int somaProco ) {
+    public Escolhas(int escolha,int itenEs, int somaQuantidade,int somaProco ) {
+        
         this.escolha = escolha;
+        this.itenEs = itenEs;
         this.somaQuantidade = somaQuantidade;
         this.somaProco =somaProco;
     }
 
     public static int getEscolha() {
-        return escolha;
+        return escolha; 
     }
 
     public static void setEscolha(int escolha) {
@@ -76,14 +78,14 @@ public class Escolhas {
                         case 1:
                             prateleiras.listtodosProtei();
                             System.out.println("Qual item vai querer");
-                            int itenEs = sc.nextInt();
+                             itenEs = sc.nextInt();
                             switch(itenEs)
                             {
                                 
                                 case 0:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida = listaProteinas.get(itenEs);
+                                List<Itens> listaProteinas = pProteina.getProteina(); 
+                               Itens proteinaEscolhida = listaProteinas.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida);
                                 // Atualiza os totais de preço e quantidade
                                 somaProco += proteinaEscolhida.getPreco();
@@ -91,8 +93,8 @@ public class Escolhas {
                                 break;
                                 case 1:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas1 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida1 = listaProteinas1.get(itenEs);
+                                List<Itens> listaProteinas1 = pProteina.getProteina(); 
+                               Itens proteinaEscolhida1 = listaProteinas1.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida1);
                                 somaProco += proteinaEscolhida1.getPreco();
                                 somaQuantidade += proteinaEscolhida1.getQuantidade();
@@ -100,8 +102,8 @@ public class Escolhas {
 
                               case 2:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas2 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida2 = listaProteinas2.get(itenEs);
+                                List<Itens> listaProteinas2 = pProteina.getProteina(); 
+                               Itens proteinaEscolhida2 = listaProteinas2.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida2);
                                 somaProco += proteinaEscolhida2.getPreco();
                                 somaQuantidade += proteinaEscolhida2.getQuantidade();
@@ -109,8 +111,8 @@ public class Escolhas {
 
                             case 3:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas3 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida3 = listaProteinas3.get(itenEs);
+                                List<Itens> listaProteinas3 = pProteina.getProteina(); 
+                               Itens proteinaEscolhida3 = listaProteinas3.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida3);
                                 somaProco += proteinaEscolhida3.getPreco();
                                 somaQuantidade += proteinaEscolhida3.getQuantidade();
@@ -118,8 +120,8 @@ public class Escolhas {
 
                             case 4:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas4 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida4 = listaProteinas4.get(itenEs);
+                                List<Itens> listaProteinas4 = pProteina.getProteina(); 
+                               Itens proteinaEscolhida4 = listaProteinas4.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida4);
                                 somaProco += proteinaEscolhida4.getPreco();
                                 somaQuantidade += proteinaEscolhida4.getQuantidade();
@@ -127,8 +129,8 @@ public class Escolhas {
 
                             case 5:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas5 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida5 = listaProteinas5.get(itenEs);
+                                List<Itens> listaProteinas5 = pProteina.getProteina(); 
+                                Itens proteinaEscolhida5 = listaProteinas5.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida5);
                                 somaProco += proteinaEscolhida5.getPreco();
                                 somaQuantidade += proteinaEscolhida5.getQuantidade();
@@ -136,8 +138,8 @@ public class Escolhas {
 
                             case 6:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas6 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida6 = listaProteinas6.get(itenEs);
+                                List<Itens> listaProteinas6 = pProteina.getProteina(); 
+                               Itens proteinaEscolhida6 = listaProteinas6.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida6);
                                 somaProco += proteinaEscolhida6.getPreco();
                                 somaQuantidade += proteinaEscolhida6.getQuantidade();
@@ -145,8 +147,8 @@ public class Escolhas {
 
                             case 7:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas7 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida7 = listaProteinas7.get(itenEs);
+                                List<Itens> listaProteinas7 = pProteina.getProteina(); 
+                               Itens proteinaEscolhida7 = listaProteinas7.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida7);
                                 somaProco += proteinaEscolhida7.getPreco();
                                 somaQuantidade += proteinaEscolhida7.getQuantidade();
@@ -154,8 +156,8 @@ public class Escolhas {
 
                             case 8:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas8 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida8 = listaProteinas8.get(itenEs);
+                                List<Itens> listaProteinas8 = pProteina.getProteina(); 
+                               Itens proteinaEscolhida8 = listaProteinas8.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida8);
                                 somaProco += proteinaEscolhida8.getPreco();
                                 somaQuantidade += proteinaEscolhida8.getQuantidade();
@@ -163,8 +165,8 @@ public class Escolhas {
 
                             case 9:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas9 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida9 = listaProteinas9.get(itenEs);
+                                List<Itens> listaProteinas9 = pProteina.getProteina(); 
+                               Itens proteinaEscolhida9 = listaProteinas9.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida9);
                                 somaProco += proteinaEscolhida9.getPreco();
                                 somaQuantidade += proteinaEscolhida9.getQuantidade();
@@ -172,8 +174,8 @@ public class Escolhas {
 
                             case 10:
                                 pProteina.arrayProteina();
-                                List<Proteina> listaProteinas10 = pProteina.getProteina(); 
-                                Proteina proteinaEscolhida10 = listaProteinas10.get(itenEs);
+                                List<Itens> listaProteinas10 = pProteina.getProteina(); 
+                               Itens proteinaEscolhida10 = listaProteinas10.get(itenEs);
                                 carrinho.adicionarItem(proteinaEscolhida10);
                                 somaProco += proteinaEscolhida10.getPreco();
                                 somaQuantidade += proteinaEscolhida10.getQuantidade();
@@ -181,8 +183,8 @@ public class Escolhas {
                                
                                     case 11:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas11 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida11 = listaProteinas11.get(itenEs);
+                                        List<Itens> listaProteinas11 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida11 = listaProteinas11.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida11);
                                         somaProco += proteinaEscolhida11.getPreco();
                                         somaQuantidade += proteinaEscolhida11.getQuantidade();
@@ -190,8 +192,8 @@ public class Escolhas {
                                 
                                     case 12:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas12 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida12 = listaProteinas12.get(itenEs);
+                                        List<Itens> listaProteinas12 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida12 = listaProteinas12.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida12);
                                         somaProco += proteinaEscolhida12.getPreco();
                                         somaQuantidade += proteinaEscolhida12.getQuantidade();
@@ -199,8 +201,8 @@ public class Escolhas {
                                 
                                     case 13:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas13 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida13 = listaProteinas13.get(itenEs);
+                                        List<Itens> listaProteinas13 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida13 = listaProteinas13.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida13);
                                         somaProco += proteinaEscolhida13.getPreco();
                                         somaQuantidade += proteinaEscolhida13.getQuantidade();
@@ -208,8 +210,8 @@ public class Escolhas {
                                 
                                     case 14:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas14 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida14 = listaProteinas14.get(itenEs);
+                                        List<Itens> listaProteinas14 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida14 = listaProteinas14.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida14);
                                         somaProco += proteinaEscolhida14.getPreco();
                                         somaQuantidade += proteinaEscolhida14.getQuantidade();
@@ -217,8 +219,8 @@ public class Escolhas {
                                 
                                     case 15:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas15 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida15 = listaProteinas15.get(itenEs);
+                                        List<Itens> listaProteinas15 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida15 = listaProteinas15.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida15);
                                         somaProco += proteinaEscolhida15.getPreco();
                                         somaQuantidade += proteinaEscolhida15.getQuantidade();
@@ -226,8 +228,8 @@ public class Escolhas {
                                 
                                     case 16:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas16 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida16 = listaProteinas16.get(itenEs);
+                                        List<Itens> listaProteinas16 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida16 = listaProteinas16.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida16);
                                         somaProco += proteinaEscolhida16.getPreco();
                                         somaQuantidade += proteinaEscolhida16.getQuantidade();
@@ -235,8 +237,8 @@ public class Escolhas {
                                 
                                     case 17:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas17 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida17 = listaProteinas17.get(itenEs);
+                                        List<Itens> listaProteinas17 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida17 = listaProteinas17.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida17);
                                         somaProco += proteinaEscolhida17.getPreco();
                                         somaQuantidade += proteinaEscolhida17.getQuantidade();
@@ -244,8 +246,8 @@ public class Escolhas {
                                 
                                     case 18:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas18 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida18 = listaProteinas18.get(itenEs);
+                                        List<Itens> listaProteinas18 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida18 = listaProteinas18.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida18);
                                         somaProco += proteinaEscolhida18.getPreco();
                                         somaQuantidade += proteinaEscolhida18.getQuantidade();
@@ -253,8 +255,8 @@ public class Escolhas {
                                 
                                     case 19:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas19 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida19 = listaProteinas19.get(itenEs);
+                                        List<Itens> listaProteinas19 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida19 = listaProteinas19.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida19);
                                         somaProco += proteinaEscolhida19.getPreco();
                                         somaQuantidade += proteinaEscolhida19.getQuantidade();
@@ -262,8 +264,8 @@ public class Escolhas {
                                 
                                     case 20:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas20 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida20 = listaProteinas20.get(itenEs);
+                                        List<Itens> listaProteinas20 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida20 = listaProteinas20.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida20);
                                         somaProco += proteinaEscolhida20.getPreco();
                                         somaQuantidade += proteinaEscolhida20.getQuantidade();
@@ -271,8 +273,8 @@ public class Escolhas {
                                 
                                     case 21:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas21 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida21 = listaProteinas21.get(itenEs);
+                                        List<Itens> listaProteinas21 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida21 = listaProteinas21.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida21);
                                         somaProco += proteinaEscolhida21.getPreco();
                                         somaQuantidade += proteinaEscolhida21.getQuantidade();
@@ -280,8 +282,8 @@ public class Escolhas {
                                 
                                     case 22:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas22 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida22 = listaProteinas22.get(itenEs);
+                                        List<Itens> listaProteinas22 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida22 = listaProteinas22.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida22);
                                         somaProco += proteinaEscolhida22.getPreco();
                                         somaQuantidade += proteinaEscolhida22.getQuantidade();
@@ -289,8 +291,8 @@ public class Escolhas {
                                 
                                     case 23:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas23 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida23 = listaProteinas23.get(itenEs);
+                                        List<Itens> listaProteinas23 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida23 = listaProteinas23.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida23);
                                         somaProco += proteinaEscolhida23.getPreco();
                                         somaQuantidade += proteinaEscolhida23.getQuantidade();
@@ -298,8 +300,8 @@ public class Escolhas {
                                 
                                     case 24:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas24 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida24 = listaProteinas24.get(itenEs);
+                                        List<Itens> listaProteinas24 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida24 = listaProteinas24.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida24);
                                         somaProco += proteinaEscolhida24.getPreco();
                                         somaQuantidade += proteinaEscolhida24.getQuantidade();
@@ -307,8 +309,8 @@ public class Escolhas {
                                 
                                     case 25:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas25 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida25 = listaProteinas25.get(itenEs);
+                                        List<Itens> listaProteinas25 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida25 = listaProteinas25.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida25);
                                         somaProco += proteinaEscolhida25.getPreco();
                                         somaQuantidade += proteinaEscolhida25.getQuantidade();
@@ -316,8 +318,8 @@ public class Escolhas {
                                 
                                     case 26:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas26 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida26 = listaProteinas26.get(itenEs);
+                                        List<Itens> listaProteinas26 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida26 = listaProteinas26.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida26);
                                         somaProco += proteinaEscolhida26.getPreco();
                                         somaQuantidade += proteinaEscolhida26.getQuantidade();
@@ -325,8 +327,8 @@ public class Escolhas {
                                 
                                     case 27:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas27 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida27 = listaProteinas27.get(itenEs);
+                                        List<Itens> listaProteinas27 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida27 = listaProteinas27.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida27);
                                         somaProco += proteinaEscolhida27.getPreco();
                                         somaQuantidade += proteinaEscolhida27.getQuantidade();
@@ -334,8 +336,8 @@ public class Escolhas {
                                 
                                     case 28:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas28 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida28 = listaProteinas28.get(itenEs);
+                                        List<Itens> listaProteinas28 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida28 = listaProteinas28.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida28);
                                         somaProco += proteinaEscolhida28.getPreco();
                                         somaQuantidade += proteinaEscolhida28.getQuantidade();
@@ -343,8 +345,8 @@ public class Escolhas {
                                 
                                     case 29:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas29 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida29 = listaProteinas29.get(itenEs);
+                                        List<Itens> listaProteinas29 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida29 = listaProteinas29.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida29);
                                         somaProco += proteinaEscolhida29.getPreco();
                                         somaQuantidade += proteinaEscolhida29.getQuantidade();
@@ -352,8 +354,8 @@ public class Escolhas {
                                 
                                     case 30:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas30 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida30 = listaProteinas30.get(itenEs);
+                                        List<Itens> listaProteinas30 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida30 = listaProteinas30.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida30);
                                         somaProco += proteinaEscolhida30.getPreco();
                                         somaQuantidade += proteinaEscolhida30.getQuantidade();
@@ -361,8 +363,8 @@ public class Escolhas {
                                 
                                     case 31:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas31 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida31 = listaProteinas31.get(itenEs);
+                                        List<Itens> listaProteinas31 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida31 = listaProteinas31.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida31);
                                         somaProco += proteinaEscolhida31.getPreco();
                                         somaQuantidade += proteinaEscolhida31.getQuantidade();
@@ -370,8 +372,8 @@ public class Escolhas {
                                 
                                     case 32:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas32 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida32 = listaProteinas32.get(itenEs);
+                                        List<Itens> listaProteinas32 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida32 = listaProteinas32.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida32);
                                         somaProco += proteinaEscolhida32.getPreco();
                                         somaQuantidade += proteinaEscolhida32.getQuantidade();
@@ -379,8 +381,8 @@ public class Escolhas {
                                 
                                     case 33:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas33 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida33 = listaProteinas33.get(itenEs);
+                                        List<Itens> listaProteinas33 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida33 = listaProteinas33.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida33);
                                         somaProco += proteinaEscolhida33.getPreco();
                                         somaQuantidade += proteinaEscolhida33.getQuantidade();
@@ -388,8 +390,8 @@ public class Escolhas {
                                 
                                     case 34:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas34 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida34 = listaProteinas34.get(itenEs);
+                                        List<Itens> listaProteinas34 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida34 = listaProteinas34.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida34);
                                         somaProco += proteinaEscolhida34.getPreco();
                                         somaQuantidade += proteinaEscolhida34.getQuantidade();
@@ -397,8 +399,8 @@ public class Escolhas {
                                 
                                     case 35:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas35 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida35 = listaProteinas35.get(itenEs);
+                                        List<Itens> listaProteinas35 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida35 = listaProteinas35.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida35);
                                         somaProco += proteinaEscolhida35.getPreco();
                                         somaQuantidade += proteinaEscolhida35.getQuantidade();
@@ -406,8 +408,8 @@ public class Escolhas {
                                 
                                     case 36:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas36 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida36 = listaProteinas36.get(itenEs);
+                                        List<Itens> listaProteinas36 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida36 = listaProteinas36.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida36);
                                         somaProco += proteinaEscolhida36.getPreco();
                                         somaQuantidade += proteinaEscolhida36.getQuantidade();
@@ -415,8 +417,8 @@ public class Escolhas {
                                 
                                     case 37:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas37 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida37 = listaProteinas37.get(itenEs);
+                                        List<Itens> listaProteinas37 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida37 = listaProteinas37.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida37);
                                         somaProco += proteinaEscolhida37.getPreco();
                                         somaQuantidade += proteinaEscolhida37.getQuantidade();
@@ -424,8 +426,8 @@ public class Escolhas {
                                 
                                     case 38:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas38 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida38 = listaProteinas38.get(itenEs);
+                                        List<Itens> listaProteinas38 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida38 = listaProteinas38.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida38);
                                         somaProco += proteinaEscolhida38.getPreco();
                                         somaQuantidade += proteinaEscolhida38.getQuantidade();
@@ -433,8 +435,8 @@ public class Escolhas {
                                 
                                     case 39:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas39 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida39 = listaProteinas39.get(itenEs);
+                                        List<Itens> listaProteinas39 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida39 = listaProteinas39.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida39);
                                         somaProco += proteinaEscolhida39.getPreco();
                                         somaQuantidade += proteinaEscolhida39.getQuantidade();
@@ -442,8 +444,8 @@ public class Escolhas {
                                 
                                     case 40:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas40 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida40 = listaProteinas40.get(itenEs);
+                                        List<Itens> listaProteinas40 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida40 = listaProteinas40.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida40);
                                         somaProco += proteinaEscolhida40.getPreco();
                                         somaQuantidade += proteinaEscolhida40.getQuantidade();
@@ -451,8 +453,8 @@ public class Escolhas {
                                 
                                     case 41:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas41 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida41 = listaProteinas41.get(itenEs);
+                                        List<Itens> listaProteinas41 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida41 = listaProteinas41.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida41);
                                         somaProco += proteinaEscolhida41.getPreco();
                                         somaQuantidade += proteinaEscolhida41.getQuantidade();
@@ -460,8 +462,8 @@ public class Escolhas {
                                 
                                     case 42:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas42 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida42 = listaProteinas42.get(itenEs);
+                                        List<Itens> listaProteinas42 = pProteina.getProteina(); 
+                                       Itens proteinaEscolhida42 = listaProteinas42.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida42);
                                         somaProco += proteinaEscolhida42.getPreco();
                                         somaQuantidade += proteinaEscolhida42.getQuantidade();
@@ -469,8 +471,8 @@ public class Escolhas {
                                 
                                     case 43:
                                         pProteina.arrayProteina();
-                                        List<Proteina> listaProteinas43 = pProteina.getProteina(); 
-                                        Proteina proteinaEscolhida43 = listaProteinas43.get(itenEs);
+                                        List<Itens> listaProteinas43 = pProteina.getProteina(); 
+                                        Itens proteinaEscolhida43 = listaProteinas43.get(itenEs);
                                         carrinho.adicionarItem(proteinaEscolhida43);
                                         somaProco += proteinaEscolhida43.getPreco();
                                         somaQuantidade += proteinaEscolhida43.getQuantidade();

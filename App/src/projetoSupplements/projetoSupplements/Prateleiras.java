@@ -10,7 +10,7 @@ public class Prateleiras {
  public void listtodosProtei()
 {
     pProteina.arrayProteina();
-      List<Proteina> proteina = pProteina.getProteina();
+      List<Itens> proteina = pProteina.getProteina();
     for ( Itens pproduto : proteina) {
         System.out.println("Item: " + pproduto.getItem());
         System.out.println("Produto: " + pproduto.getProduto());
